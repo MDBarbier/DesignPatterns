@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Logging;
 using RepositoryPatternWithGenerics.Models;
 using RepositoryPatternWithGenerics.Repository;
 using System.Diagnostics;
+using System.Linq;
 using System.Text.Json;
 
 namespace RepositoryPatternWithGenerics.Controllers
@@ -39,6 +41,28 @@ namespace RepositoryPatternWithGenerics.Controllers
                 ViewBag.json = ex.Message;
                 return View();
             }
+        }
+
+        public IActionResult Add(string json)
+        {
+            var movieToAdd = JsonSerializer.Deserialize<Movie>(json);
+
+            var added = movieRepository.Add(movieToAdd);
+            movieRepository.SaveChanges();
+
+            var addedMovie = movieRepository.Find(movie => movie.Title == movieToAdd.Title).FirstOrDefault();
+
+            if (addedMovie == null)
+            {
+                ViewBag.json = "Failed to add movie";
+            }
+            else
+            {
+                ViewBag.json = JsonSerializer.Serialize<Movie>(addedMovie);
+            }
+
+            
+            return View();
         }
 
         public IActionResult Privacy()

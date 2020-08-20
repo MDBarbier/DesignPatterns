@@ -16,19 +16,19 @@ namespace RepositoryPatternWithGenerics.Repository
             this.context = context;
         }
 
-        //public virtual T Add(T entity)
-        //{
-        //    return context
-        //        .Add(entity)
-        //        .Entity;
-        //}
+        public virtual T Add(T entity)
+        {
+            return context
+                .Add(entity)
+                .Entity;
+        }
 
-        //public virtual IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
-        //{
-        //    return context.Set<T>()
-        //        .AsQueryable()
-        //        .Where(predicate).ToList();
-        //}
+        public virtual IEnumerable<T> Find(Expression<Func<T, bool>> predicate)
+        {
+            return context.Set<T>()
+                .AsQueryable()
+                .Where(predicate).ToList();
+        }
 
         public virtual T Get(int id)
         {
@@ -41,11 +41,11 @@ namespace RepositoryPatternWithGenerics.Repository
                 .ToList();
         }
 
-        //public virtual T Update(T entity)
-        //{
-        //    return context.Update(entity)
-        //        .Entity;
-        //}
+        public virtual T Update(T entity)
+        {
+            return context.Update(entity)
+                .Entity;
+        }
 
         public void SaveChanges()
         {
