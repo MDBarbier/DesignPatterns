@@ -14,7 +14,7 @@ namespace RepositoryPatternWithGenerics.Controllers
         //Holds our repository implementation
         private readonly IRepository<Movie> movieRepository;
 
-        //Repository is injected at construction time
+        //Repository is injected at construction time (Startup.cs registers MovieRepository as the implementation for IRepository<Movie>)
         public HomeController(ILogger<HomeController> logger, IRepository<Movie> movieAccessMethods)
         {
             _logger = logger;
