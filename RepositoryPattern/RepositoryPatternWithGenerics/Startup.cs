@@ -4,8 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using RepositoryPatternWithGenerics.Database;
-using RepositoryPatternWithGenerics.Models;
-using RepositoryPatternWithGenerics.Repository;
+using RepositoryPatternWithGenerics.UnitOfWork;
 
 namespace RepositoryPatternWithGenerics
 {
@@ -26,7 +25,7 @@ namespace RepositoryPatternWithGenerics
         {
             services.AddControllersWithViews();
             services.AddEntityFrameworkSqlite().AddDbContext<DatabaseContext>();            
-            services.AddTransient<IRepository<Movie>, MovieRepository>();            
+            services.AddTransient<IUnitOfWork, UnitOfWork.UnitOfWork>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

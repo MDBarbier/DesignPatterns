@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;
 using Microsoft.Extensions.Logging;
 using RepositoryPatternWithGenerics.Models;
-using RepositoryPatternWithGenerics.Repository;
+using RepositoryPatternWithGenerics.UnitOfWork;
 using System.Diagnostics;
 using System.Linq;
 using System.Text.Json;
@@ -11,16 +10,15 @@ namespace RepositoryPatternWithGenerics.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
+        private readonly ILogger<HomeController> logger;
 
-        //Holds our repository implementation
-        private readonly IRepository<Movie> movieRepository;
-
-        //Repository is injected at construction time (Startup.cs registers MovieRepository as the implementation for IRepository<Movie>)
-        public HomeController(ILogger<HomeController> logger, IRepository<Movie> movieAccessMethods)
+        //The unit of work gives a single access point to our various repositories
+        private readonly IUnitOfWork unitOfWork;
+                                
+        public HomeController(ILogger<HomeController> logger, IUnitOfWork unitOfWork)
         {
-            _logger = logger;
-            movieRepository = movieAccessMethods;
+            this.logger = logger;
+            this.unitOfWork = unitOfWork;
         }
 
         public IActionResult Index()
@@ -28,7 +26,7 @@ namespace RepositoryPatternWithGenerics.Controllers
             try
             {
                 //Get all movies via the repository - note this controller knows nothing about sqlite, or anything in the database folder
-                var data = movieRepository.All();
+                var data = unitOfWork.MovieRepository.All();
                 var json = JsonSerializer.Serialize(data);
 
                 //This is bad practice, in reality we would use a viewmodel,
@@ -47,10 +45,10 @@ namespace RepositoryPatternWithGenerics.Controllers
         {
             var movieToAdd = JsonSerializer.Deserialize<Movie>(json);
 
-            var added = movieRepository.Add(movieToAdd);
-            movieRepository.SaveChanges();
+            var added = unitOfWork.MovieRepository.Add(movieToAdd);
+            unitOfWork.MovieRepository.SaveChanges();
 
-            var addedMovie = movieRepository.Find(movie => movie.Title == movieToAdd.Title).FirstOrDefault();
+            var addedMovie = unitOfWork.MovieRepository.Find(movie => movie.Title == movieToAdd.Title).FirstOrDefault();
 
             if (addedMovie == null)
             {
