@@ -19,6 +19,7 @@ namespace AdapterPatternDemo
         ///  
         /// C# mostly uses object adapters, as it prefers composition over inheritance.
         /// 
+        /// Related patterns: Decorator, Bridge, Proxy, Repository, Strategy, Facade
         /// </summary>
         /// <param name="args"></param>
         static void Main()
@@ -65,7 +66,7 @@ namespace AdapterPatternDemo
             #region Class adapter pattern
 
             ///Calls an external service's GetData method defined by the adapter injected
-            var adapter3 = new Adapter3(); 
+            var adapter3 = new Adapter3(); //note that the service3 GetData implementation must be abstract/virtual
             var data3 = adapter3.GetData();
             Console.WriteLine($"Data3: {data3}");
             Console.WriteLine("");
