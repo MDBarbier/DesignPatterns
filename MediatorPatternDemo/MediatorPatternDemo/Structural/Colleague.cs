@@ -2,6 +2,8 @@
 {
     public abstract class Colleague
     {
+        public virtual string Name { get; set; }
+
         protected Mediator mediator;
 
         internal void SetMediator(Mediator mediator)
