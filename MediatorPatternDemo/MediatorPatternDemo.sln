@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatorPatternDemo", "MediatorPatternDemo\MediatorPatternDemo.csproj", "{3044D258-4990-4071-9C19-C7E5423310D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MediatorPatternDemo", "MediatorPatternDemo\MediatorPatternDemo.csproj", "{3044D258-4990-4071-9C19-C7E5423310D6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GuiMediatorDemo", "GuiMediatorDemo\GuiMediatorDemo.csproj", "{6034EB02-0329-423C-8567-B53E2329EB90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediatR_Demo", "MediatR_Demo\MediatR_Demo.csproj", "{1F8F9ED9-6D4F-452F-9631-5624AF4EDB8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{3044D258-4990-4071-9C19-C7E5423310D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3044D258-4990-4071-9C19-C7E5423310D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3044D258-4990-4071-9C19-C7E5423310D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6034EB02-0329-423C-8567-B53E2329EB90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6034EB02-0329-423C-8567-B53E2329EB90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6034EB02-0329-423C-8567-B53E2329EB90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6034EB02-0329-423C-8567-B53E2329EB90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F8F9ED9-6D4F-452F-9631-5624AF4EDB8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F8F9ED9-6D4F-452F-9631-5624AF4EDB8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F8F9ED9-6D4F-452F-9631-5624AF4EDB8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F8F9ED9-6D4F-452F-9631-5624AF4EDB8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
