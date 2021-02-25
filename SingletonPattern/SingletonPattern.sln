@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30406.217
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicSingletonPattern-WrongWay", "SingletonPattern\BasicSingletonPattern-WrongWay.csproj", "{64140A17-5312-440F-A970-4AA70ED09B18}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BasicSingletonPattern-WrongWay", "SingletonPattern\BasicSingletonPattern-WrongWay.csproj", "{64140A17-5312-440F-A970-4AA70ED09B18}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonPattern-RightWay", "SingletonPattern-RightWay\SingletonPattern-RightWay.csproj", "{BD24F850-2E02-4EFD-A0B4-C342848735C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingletonPattern-RightWay", "SingletonPattern-RightWay\SingletonPattern-RightWay.csproj", "{BD24F850-2E02-4EFD-A0B4-C342848735C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SingletonContainerDemo", "SingletonContainerDemo\SingletonContainerDemo.csproj", "{D9525061-C68E-4C67-9B57-DD44634E81F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{BD24F850-2E02-4EFD-A0B4-C342848735C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD24F850-2E02-4EFD-A0B4-C342848735C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD24F850-2E02-4EFD-A0B4-C342848735C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9525061-C68E-4C67-9B57-DD44634E81F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9525061-C68E-4C67-9B57-DD44634E81F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9525061-C68E-4C67-9B57-DD44634E81F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9525061-C68E-4C67-9B57-DD44634E81F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
